@@ -34,15 +34,17 @@ class ToDoTableViewController: UITableViewController {
     
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return toDos.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let toDo = toDos[indexPath.row]
+        if (toDo.isImportant == true){
+            cell.textLabel?.text = "!!" + toDo.name
+        }else{
+            cell.textLabel?.text = toDo.name
+        }
         return cell
     }
   
