@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 class ToDo {
-    var title : String
-    var isImportant : Bool
+    var name = ""
+    var isImportant = false
     
-    init(title: String, isImportant: Bool){
-        self.title = title
+    /*init(name: String, isImportant: Bool){
+        self.name = name
         self.isImportant = isImportant
-    }
+    }*/
 }
