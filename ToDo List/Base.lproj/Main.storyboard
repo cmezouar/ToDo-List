@@ -45,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="710" y="125"/>
         </scene>
-        <!--View Controller-->
+        <!--Add To Do View Controller-->
         <scene sceneID="1ya-91-Ygh">
             <objects>
-                <viewController id="NYC-2i-cxV" sceneMemberID="viewController">
+                <viewController id="NYC-2i-cxV" customClass="AddToDoViewController" customModule="ToDo_List" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vYk-4L-Ydh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,6 +77,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQ8-n7-rCC">
                                 <rect key="frame" x="172.5" y="318" width="30" height="30"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addButtonClicked:" destination="NYC-2i-cxV" eventType="touchUpInside" id="lgu-Az-L7h"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -96,6 +99,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="F7e-e7-6IU"/>
                     </view>
+                    <connections>
+                        <outlet property="importantSwitch" destination="7aS-jl-gm5" id="By2-H1-TfV"/>
+                        <outlet property="titleTextField" destination="amr-ID-3dr" id="j11-Z5-t46"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lP6-mH-PAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
