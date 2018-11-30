@@ -10,6 +10,7 @@ import UIKit
 
 class AddToDoViewController: UIViewController {
 
+    var previousViewController = ToDoTableViewController() 
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var importantSwitch: UISwitch!
     
@@ -20,5 +21,13 @@ class AddToDoViewController: UIViewController {
     }
     
     @IBAction func addButtonClicked(_ sender: Any) {
+        let toDo = ToDo()
+        toDo.name = titleTextField.text!
+        toDo.isImportant = importantSwitch.isOn
+        previousViewController.toDos.append(toDo)
+        previousViewController.tableView.reloadData()
+        
+        //when the button is clicked, move back to the previous view
+        navigationController?.popViewController(animated: true)
     }
 }
