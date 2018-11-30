@@ -22,12 +22,15 @@ class AddToDoViewController: UIViewController {
     
     @IBAction func addButtonClicked(_ sender: Any) {
         let toDo = ToDo()
-        toDo.name = titleTextField.text!
-        toDo.isImportant = importantSwitch.isOn
-        previousViewController.toDos.append(toDo)
-        previousViewController.tableView.reloadData()
+        if let title = titleTextField.text{
+            toDo.name = title
+            toDo.isImportant = importantSwitch.isOn
+            previousViewController.toDos.append(toDo)
+            previousViewController.tableView.reloadData()
+            //when the button is clicked, move back to the previous view
+            navigationController?.popViewController(animated: true)
+        }
+       
         
-        //when the button is clicked, move back to the previous view
-        navigationController?.popViewController(animated: true)
     }
 }
